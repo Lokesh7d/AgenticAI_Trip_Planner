@@ -16,5 +16,8 @@ langchain_openai
 langgraph
 langchain-google-community[places]
 
+#For Jupyter Notebooks
+ipykernel
+
 #This is for local packages. dot indicates the current directory.
 -e .
