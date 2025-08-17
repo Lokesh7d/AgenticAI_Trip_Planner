@@ -39,5 +39,4 @@ class Calculator:
             float: Expense for a single day
         """
         return total / days if days > 0 else 0
-    
-    
+        

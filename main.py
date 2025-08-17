@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from agent.agentic_workflow import GraphBuilder
-from utils.save_to_document import save_document
+from utils.save_to_file import save_document
 from starlette.responses import JSONResponse
 import os
 import datetime
@@ -43,6 +43,8 @@ async def query_travel_agent(query:QueryRequest):
             final_output = output["messages"][-1].content  # Last AI response
         else:
             final_output = str(output)
+        
+        save_document(final_output)
         
         return {"answer": final_output}
     except Exception as e:
